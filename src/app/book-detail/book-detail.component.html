@@ -1,0 +1,31 @@
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <h1>Enter Book Details</h1>
+        <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Book Name</label>
+              <input type="text" name="name" class="form-control" ngModel required placeholder="{{book.name}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Author</label>
+                <input type="text" name="author" class="form-control" ngModel required placeholder="{{book.author}}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Description</label>
+                <input type="text" name="description" class="form-control" ngModel required placeholder="{{book.description}}">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Quantity</label>
+                <input type="text" name="quantity" class="form-control" ngModel required placeholder="{{book.quantity}}">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary my-2">Submit</button>
+                <button class="btn btn-secondary mx-2" routerLink="/books-list">Cancel</button>
+              </div>
+          </form>
+    </div>
+</div>
+
+
+

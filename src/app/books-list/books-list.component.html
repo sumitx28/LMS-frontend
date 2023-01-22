@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>All Books</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+              <th scope="col">Book Name</th>
+              <th scope="col">Author</th>
+              <th scope="col">Description</th>
+              <th scope="col">Available Qty</th>
+              <th scope="col">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let book of allBooks">
+                <td>{{book.name}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.description}}</td>
+                <td>{{book.quantity}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" routerLink="/edit-book/{{book.id}}">Edit</button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteBook(book.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
