@@ -11,6 +11,8 @@ import { BooksListComponent } from './books-list/books-list.component';
 import { BooksServiceService } from './services/books-service.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AvailableBooksComponent } from './available-books/available-books.component';
+import { IssuedBooksComponent } from './issued-books/issued-books.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     BookDetailComponent,
     AddBookComponent,
-    BooksListComponent
+    BooksListComponent,
+    AvailableBooksComponent,
+    IssuedBooksComponent
   ],
   imports: [
     BrowserModule,

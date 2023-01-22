@@ -4,17 +4,18 @@ import { Router } from '@angular/router';
 import { BooksServiceService } from '../services/books-service.service';
 
 @Component({
-  selector: 'app-books-list',
-  templateUrl: './books-list.component.html',
-  styleUrls: ['./books-list.component.css']
+  selector: 'app-available-books',
+  templateUrl: './available-books.component.html',
+  styleUrls: ['./available-books.component.css']
 })
-export class BooksListComponent {
+export class AvailableBooksComponent {
+
   allBooks : any;
 
   constructor(private bookService : BooksServiceService , private router : Router){}
 
   ngOnInit(){
-    this.bookService.getAllBooks().subscribe(res => this.allBooks = res);
+    this.bookService.getAllAvailableBooks().subscribe(res => this.allBooks = res);
   }
 
   deleteBook(bookId : any){
@@ -30,13 +31,6 @@ export class BooksListComponent {
       alert(msg);
       this.ngOnInit();
     });
-  }
-
-  returnBook(bookId : any){
-    this.bookService.returnBook(bookId).subscribe((msg) => {
-      alert(msg);
-      this.ngOnInit();
-    })
   }
 
 }

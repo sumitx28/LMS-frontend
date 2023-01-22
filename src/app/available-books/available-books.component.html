@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>All Books</h1>
+    <h1>Available Books</h1>
     <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -18,8 +18,7 @@
                 <td>{{book.description}}</td>
                 <td>{{book.issued? 'Not Available' : 'Available'}}</td>
                 <td>
-                    <button class="btn btn-sm btn-success mr-2" *ngIf="!book.issued" (click)="issueBook(book.id)">Issue</button>
-                    <button class="btn btn-sm btn-warning mr-2" *ngIf="book.issued" (click)="returnBook(book.id)">Return</button>
+                    <button class="btn btn-sm btn-success mr-2" (click)="issueBook(book.id)">Issue</button>
                     <button class="btn btn-sm btn-primary mr-2" routerLink="/edit-book/{{book.id}}">Edit</button>
                     <button class="btn btn-sm btn-danger" (click)="deleteBook(book.id)">Delete</button>
                 </td>

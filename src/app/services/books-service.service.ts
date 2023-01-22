@@ -24,6 +24,14 @@ export class BooksServiceService {
     return this.http.get(this.API_URL);
   }
 
+  getAllAvailableBooks(){
+    return this.http.get(`${this.API_URL}/available-books`);
+  }
+
+  getAllIssuedBooks(){
+    return this.http.get(`${this.API_URL}/issued-books`);
+  }
+
   updateBook(id : number , data : Book){
     return this.http.put(`${this.API_URL}/${id}` , data);
   }
@@ -32,5 +40,12 @@ export class BooksServiceService {
     return this.http.delete(`${this.API_URL}/${id}`);
   }
 
+  issueBook(id : number , studentName : string | null){
+    return this.http.post(`${this.API_URL}/issue/${id}` , {studentName : studentName});
+  }
+
+  returnBook(id : number){
+    return this.http.post(`${this.API_URL}/return/${id}` , {});
+  }
 
 }
