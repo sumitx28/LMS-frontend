@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvailableBooksComponent } from './available-books/available-books.component';
 import { IssuedBooksComponent } from './issued-books/issued-books.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { IssuedBooksComponent } from './issued-books/issued-books.component';
     AddBookComponent,
     BooksListComponent,
     AvailableBooksComponent,
-    IssuedBooksComponent
+    IssuedBooksComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
