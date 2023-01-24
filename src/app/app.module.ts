@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvailableBooksComponent } from './available-books/available-books.component';
 import { IssuedBooksComponent } from './issued-books/issued-books.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BooksListComponent,
     AvailableBooksComponent,
     IssuedBooksComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

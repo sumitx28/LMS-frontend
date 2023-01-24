@@ -17,6 +17,7 @@ export class BooksListComponent {
     this.bookService.getAllBooks().subscribe(res => this.allBooks = res);
   }
 
+  // Delete the specific book from database using BookId
   deleteBook(bookId : any){
     this.bookService.deleteBook(bookId).subscribe(res => {
       alert(res);
@@ -24,6 +25,7 @@ export class BooksListComponent {
     });
   }
 
+  // Issue the specific book from database using BookId
   issueBook(bookId : any){
     const studentName = prompt('Enter Student Name : ');
     this.bookService.issueBook(bookId , studentName).subscribe((msg) => {
@@ -32,6 +34,7 @@ export class BooksListComponent {
     });
   }
 
+  // Return the specific book from database using BookId
   returnBook(bookId : any){
     this.bookService.returnBook(bookId).subscribe((msg) => {
       alert(msg);

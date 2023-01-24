@@ -1,0 +1,17 @@
+
+<div class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    <h1 class="display-4">Library Management System</h1>
+    <p class="lead">Developed By Sumit.</p>
+  </div>
+</div>
+
+<div class="login-page">
+    <div class="form" >
+      <form class="login-form" #form="ngForm" (ngSubmit)="loginUser(form.value)">
+        <input type="text" placeholder="username" name="username" ngModel/>
+        <input type="password" placeholder="password" name="password" ngModel/>
+        <button>login</button>
+      </form>
+    </div>
+</div>

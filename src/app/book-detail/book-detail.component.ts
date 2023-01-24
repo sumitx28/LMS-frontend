@@ -23,7 +23,8 @@ export class BookDetailComponent {
     })
   }
 
-  onSubmit(data : any){
+  // Update the book with the given Id and Obtained details from the form
+  updateBookDetail(data : any){
     this.bookService.updateBook(this.id , data).subscribe(res => {
       alert(res);
       this.router.navigate(['/books-list']);

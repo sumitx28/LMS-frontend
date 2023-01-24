@@ -1,7 +1,9 @@
+<app-header></app-header>
+
 <div class="row justify-content-center mt-5">
     <div class="col-md-6">
       <h1>Enter New Book Details</h1>
-        <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+        <form (ngSubmit)="addBook(form.value)" #form="ngForm">
             <div class="form-group">
               <label for="exampleFormControlInput1">Book Name</label>
               <input type="text" name="name" class="form-control" placeholder="Harry Potter" ngModel required>

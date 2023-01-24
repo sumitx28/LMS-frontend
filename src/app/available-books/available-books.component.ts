@@ -17,7 +17,7 @@ export class AvailableBooksComponent {
   ngOnInit(){
     this.bookService.getAllAvailableBooks().subscribe(res => this.allBooks = res);
   }
-
+  
   deleteBook(bookId : any){
     this.bookService.deleteBook(bookId).subscribe(res => {
       alert(res);
