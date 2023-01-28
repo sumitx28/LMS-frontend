@@ -9,15 +9,13 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent {
 
-  constructor(private auth : AuthService,private router : Router){}
+  constructor(public auth : AuthService,public router : Router){}
 
   logoutCurrentUser(){
-
     this.auth.logoutUser().subscribe(res => {
       localStorage.removeItem('cookieId');
       this.router.navigate(['login']);
-    })
-
+    },err => alert(err))
   }
 
 }

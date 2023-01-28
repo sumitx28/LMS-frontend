@@ -11,23 +11,23 @@ export class DashboardComponent {
   issuedBooks : any;
   availableBooks : any;
 
-  constructor(private http : BooksServiceService){}
+  constructor(public http : BooksServiceService){}
 
   ngOnInit(){
     // Getting total number of available books
     this.http.getAllAvailableBooks().subscribe((data : any) => {
       this.availableBooks = data.length;
-    })
+    },err => alert(err))
 
     // Getting total issued books
     this.http.getAllIssuedBooks().subscribe((data : any) => {
       this.issuedBooks = data.length;
-    })
+    },err => alert(err))
 
     // Getting total books in the database
     this.http.getAllBooks().subscribe((data : any) => {
       this.totalBooks = data.length
-    })
+    },err => alert(err))
 
   }
 

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { BooksServiceService } from '../services/books-service.service';
 
@@ -11,7 +10,7 @@ import { BooksServiceService } from '../services/books-service.service';
 export class BooksListComponent {
   allBooks : any;
 
-  constructor(private bookService : BooksServiceService , private router : Router){}
+  constructor(public bookService : BooksServiceService){}
 
   ngOnInit(){
     this.bookService.getAllBooks().subscribe(res => this.allBooks = res);
@@ -22,7 +21,7 @@ export class BooksListComponent {
     this.bookService.deleteBook(bookId).subscribe(res => {
       alert(res);
       this.ngOnInit();
-    });
+    },err => alert(err));
   }
 
   // Issue the specific book from database using BookId
@@ -31,7 +30,7 @@ export class BooksListComponent {
     this.bookService.issueBook(bookId , studentName).subscribe((msg) => {
       alert(msg);
       this.ngOnInit();
-    });
+    },err => alert(err));
   }
 
   // Return the specific book from database using BookId
@@ -39,7 +38,7 @@ export class BooksListComponent {
     this.bookService.returnBook(bookId).subscribe((msg) => {
       alert(msg);
       this.ngOnInit();
-    })
+    },err => alert(err))
   }
 
 }

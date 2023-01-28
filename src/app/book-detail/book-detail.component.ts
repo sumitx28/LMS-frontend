@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Book } from '../services/book';
 import { BooksServiceService } from '../services/books-service.service';
 
 @Component({
@@ -13,22 +12,22 @@ export class BookDetailComponent {
   id : any;
   book : any;
 
-  constructor(private router : Router , private activatedRoute : ActivatedRoute , private bookService : BooksServiceService){
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+  constructor(public router : Router , public activatedRoute : ActivatedRoute , public bookService : BooksServiceService){
   }
 
   ngOnInit(){
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.bookService.getBookById(this.id).subscribe(res => {
       this.book = res;
-    })
+    },err => alert(err))
   }
 
   // Update the book with the given Id and Obtained details from the form
   updateBookDetail(data : any){
     this.bookService.updateBook(this.id , data).subscribe(res => {
       alert(res);
-      this.router.navigate(['/books-list']);
-    })
+      this.router.navigate(['books-list']);
+    },err => alert(err))
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { BooksServiceService } from '../services/books-service.service';
 
 @Component({
@@ -10,16 +9,16 @@ import { BooksServiceService } from '../services/books-service.service';
 export class IssuedBooksComponent {
   allBooks : any;
 
-  constructor(private bookService : BooksServiceService , private router : Router){}
+  constructor(public bookService : BooksServiceService){}
 
   ngOnInit(){
-    this.bookService.getAllIssuedBooks().subscribe(res => this.allBooks = res);
+    this.bookService.getAllIssuedBooks().subscribe(res => this.allBooks = res ,err => alert(err));
   }
 
   returnBook(bookId : any){
     this.bookService.returnBook(bookId).subscribe((msg) => {
       alert(msg);
       this.ngOnInit();
-    })
+    },err => alert(err))
   }
 }

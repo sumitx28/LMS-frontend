@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Book } from './book';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class BooksServiceService {
 
   constructor(private http : HttpClient) { }
 
-  addBook(data : Book){
+  addBook(data : any){
     return this.http.post(this.API_URL , data);
   }
 
@@ -32,7 +31,7 @@ export class BooksServiceService {
     return this.http.get(`${this.API_URL}/issued-books`);
   }
 
-  updateBook(id : number , data : Book){
+  updateBook(id : number , data : any){
     return this.http.put(`${this.API_URL}/${id}` , data);
   }
 

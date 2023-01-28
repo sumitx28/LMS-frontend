@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class LoginComponent {
 
-  constructor(private auth : AuthService , private router : Router){}
+  constructor(public auth : AuthService , public router : Router){}
 
   ngOnInit(){
     if(this.auth.isUserLoggedIn()){

@@ -1,23 +1,35 @@
 <app-header></app-header>
 
 <div class="container row ml-auto mr-auto">
-    <div class="col-sm-6 col-md-4 d-flex justify-content-center">
-        <div class="caption text-center">
+
+      <div class="col-md-3 text-center ml-auto">
+        <div class="card">
+          <div class="card-header">
             <a routerLink="/books-list"><h3>Total Books</h3></a>
-          <p>{{totalBooks}}</p>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4 d-flex justify-content-center">
-          <div class="caption text-center">
-            <a routerLink="/issued-books"><h3>Issued Books</h3></a>
-            <p>{{issuedBooks}}</p>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title">{{totalBooks}}</h1>
+          </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4 d-flex justify-content-center">
-          <div class="caption text-center">
+      <div class="col-md-3 text-center">
+        <div class="card">
+          <div class="card-header">
             <a routerLink="/available-books"><h3>Available Books</h3></a>
-            <p>{{availableBooks}}</p>
           </div>
+          <div class="card-body">
+            <h1 class="card-title">{{availableBooks}}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 text-center mr-auto">
+        <div class="card">
+          <div class="card-header">
+            <a routerLink="/issued-books"><h3>Issued Books</h3></a>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title">{{issuedBooks}}</h1>
+          </div>
+        </div>
       </div>
   </div>
-

@@ -12,7 +12,7 @@ export class AvailableBooksComponent {
 
   allBooks : any;
 
-  constructor(private bookService : BooksServiceService , private router : Router){}
+  constructor(public bookService : BooksServiceService){}
 
   ngOnInit(){
     this.bookService.getAllAvailableBooks().subscribe(res => this.allBooks = res);
@@ -22,7 +22,7 @@ export class AvailableBooksComponent {
     this.bookService.deleteBook(bookId).subscribe(res => {
       alert(res);
       this.ngOnInit();
-    });
+    } , err => alert(err));
   }
 
   issueBook(bookId : any){
@@ -30,7 +30,7 @@ export class AvailableBooksComponent {
     this.bookService.issueBook(bookId , studentName).subscribe((msg) => {
       alert(msg);
       this.ngOnInit();
-    });
+    } , err => alert(err));
   }
 
 }

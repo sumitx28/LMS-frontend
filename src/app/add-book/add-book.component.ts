@@ -9,15 +9,14 @@ import { BooksServiceService } from '../services/books-service.service';
 })
 export class AddBookComponent {
 
-  constructor(private bookService : BooksServiceService , private router : Router){}
+  constructor(public bookService : BooksServiceService , public router : Router){}
 
   // Inserts the given Book Data to database.
   addBook(data : any){
     this.bookService.addBook(data).subscribe((res) => {
       alert(res);
       this.router.navigate(['/books-list'])
-    }
-    )
+    } , err => alert(err))
   }
 
 }
